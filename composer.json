@@ -34,12 +34,6 @@
             "JeffersonGoncalves\\FilamentAnalyticsCore\\": "src"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../filament-plugin-core"
-        }
-    ],
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse",
         "format": "vendor/bin/pint"
