@@ -1,13 +1,13 @@
 <div class="filament-hidden">
 
-![Filament Analytics Core](https://raw.githubusercontent.com/jeffersongoncalves/filament-analytics-core/3.x/art/jeffersongoncalves-filament-analytics-core.png)
+![Filament Analytics Core](https://raw.githubusercontent.com/jeffersongoncalves/filament-analytics-core/1.x/art/jeffersongoncalves-filament-analytics-core.png)
 
 </div>
 
 # Filament Analytics Core
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-analytics-core.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-analytics-core)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-analytics-core/fix-php-code-style-issues.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-analytics-core/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A3.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-analytics-core/fix-php-code-style-issues.yml?branch=1.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-analytics-core/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-analytics-core.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-analytics-core)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-analytics-core.svg?style=flat-square)](LICENSE.md)
 
@@ -25,14 +25,14 @@ Shared base classes for the jeffersongoncalves Filament **analytics-injector** p
 
 - PHP 8.2 or higher
 - Laravel 11.0 or higher
-- Filament 5.x (3.x branch)
+- Filament 3.x (1.x branch)
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-analytics-core:"^3.0"
+composer require jeffersongoncalves/filament-analytics-core:"^1.0"
 ```
 
 ## What it provides
