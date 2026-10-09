@@ -41,6 +41,7 @@ composer require jeffersongoncalves/filament-analytics-core:"^2.0"
 
 - **`AbstractAnalyticsPlugin`** — registers an optional settings page and exposes the `settingsPage(bool)` toggle. Subclass declares `getId()` and `getSettingsPageClass()`.
 - **`AbstractAnalyticsServiceProvider`** — wires `hasTranslations()` and injects the tracking script(s) via render hooks. Subclass declares `packageName()` and `renderHooks()`.
+- **`navigationGroup()`** — every plugin built on it accepts `->navigationGroup('...')` (or a closure) to put its settings page in one of the panel's own groups; settings pages read it with `AbstractAnalyticsPlugin::navigationGroupFor($pluginId)`.
 
 ## Usage
 

@@ -2,6 +2,7 @@
 
 namespace JeffersonGoncalves\FilamentAnalyticsCore;
 
+use Closure;
 use Filament\Panel;
 use JeffersonGoncalves\FilamentPluginCore\BasePlugin;
 
@@ -15,6 +16,8 @@ use JeffersonGoncalves\FilamentPluginCore\BasePlugin;
 abstract class AbstractAnalyticsPlugin extends BasePlugin
 {
     protected bool $hasSettingsPage = true;
+
+    protected string|Closure|null $navigationGroup = null;
 
     /**
      * The settings page class to register, or null when the package
@@ -38,5 +41,41 @@ abstract class AbstractAnalyticsPlugin extends BasePlugin
         $this->hasSettingsPage = $condition;
 
         return $this;
+    }
+
+    /**
+     * Put the settings page in one of the panel's own navigation groups
+     * (a string or a closure, so it can be translated). Null keeps the
+     * group from the plugin's translations.
+     */
+    public function navigationGroup(string|Closure|null $group): static
+    {
+        $this->navigationGroup = $group;
+
+        return $this;
+    }
+
+    public function getNavigationGroup(): ?string
+    {
+        $group = $this->navigationGroup instanceof Closure ? ($this->navigationGroup)() : $this->navigationGroup;
+
+        return $group === null ? null : (string) $group;
+    }
+
+    /**
+     * The group given to the plugin with this id on the current panel, if any.
+     * Settings pages call it from getNavigationGroup() and fall back to their translation.
+     */
+    public static function navigationGroupFor(string $pluginId): ?string
+    {
+        $panel = filament()->getCurrentPanel();
+
+        if ($panel === null || ! $panel->hasPlugin($pluginId)) {
+            return null;
+        }
+
+        $plugin = $panel->getPlugin($pluginId);
+
+        return $plugin instanceof self ? $plugin->getNavigationGroup() : null;
     }
 }
